@@ -17,3 +17,7 @@ Tweepy - It is an open source Python package that gives a very convenient way to
 Regular Expression(RE) - A regular expression (or RE) specifies a set of strings that matches it; the functions in this module let you check if a particular string matches a given regular expression. This can library can be used in data cleaning
 
 Matplotlib - Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python. Matplotlib makes easy things easy and hard things possible.
+
+# Project 2 : Analysis of Global data on sustainable energy using Power BI
+
+![PowerBI](https://github.com/anurag3103-pa/Anurag-Portfolio/assets/83720897/c28402ab-00f6-42b1-a13f-9045641da166)
