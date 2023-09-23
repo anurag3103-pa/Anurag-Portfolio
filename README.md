@@ -25,3 +25,12 @@ Matplotlib - Matplotlib is a comprehensive library for creating static, animated
 # Project 3 : Analysis of Superstore data using Tableau
 
 ![Tableau](https://github.com/anurag3103-pa/Anurag-Portfolio/assets/83720897/c49e8a5a-ff82-4e9e-9ac1-1ed7f233e909)
+
+# [Project 4 : Analysis of Global YouTube 2023 Statistics using SQL](https://github.com/anurag3103-pa/SQL/blob/main/youtube_data.sql)
+
+Created a table and import data in it.
+
+Use of Aggregated functions, OLAP, ROLLUP to get more understanding of the data like
+(category wise subscribers and views, top channel in each country and which YouTube
+categories are being watched in each country)
+
