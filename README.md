@@ -34,8 +34,14 @@ Matplotlib - Matplotlib is a comprehensive library for creating static, animated
 # [Project 6 : Analysis of Global YouTube 2023 Statistics using SQL](https://github.com/anurag3103-pa/SQL/blob/main/youtube_data.sql)
 
 # Objective : 
+
+
 Disitnct categories of youtube channel
+
+
 Find top category wise subscribers and views
+
+
 Top channel in each country
             
 
