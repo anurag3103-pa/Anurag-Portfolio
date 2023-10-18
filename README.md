@@ -45,4 +45,4 @@ Top category wise subscribers and views
 Top channel in each country
             
 
-# [Project 7 Analyzing Motorcycle Part Sales](https://github.com/anurag3103-pa/SQL/blob/main/notebook.ipynb)
+# [Project 7 Analyzing Motorcycle Part Sales using SQL](https://github.com/anurag3103-pa/SQL/blob/main/notebook.ipynb)
