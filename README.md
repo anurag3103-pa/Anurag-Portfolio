@@ -18,18 +18,20 @@ Regular Expression(RE) - A regular expression (or RE) specifies a set of strings
 
 Matplotlib - Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python. Matplotlib makes easy things easy and hard things possible.
 
-# Project 2 : Analysis of Superstore data using Tableau
+# Project 2 : US Tornado data Analysis using Tableau
+![cap33](https://github.com/anurag3103-pa/Anurag-Portfolio/blob/main/cap33.JPG)
+# Project 3 : Analysis of Superstore data using Tableau
 ![cap32](https://github.com/anurag3103-pa/Anurag-Portfolio/blob/main/cap32.JPG)
 
-# Project 3 : Analysis of Global data on sustainable energy using Power BI
+# Project 4 : Analysis of Global data on sustainable energy using Power BI
 
 ![PowerBI](https://github.com/anurag3103-pa/Anurag-Portfolio/assets/83720897/c28402ab-00f6-42b1-a13f-9045641da166)
 
-# Project 4 : Analysis of Superstore data using Tableau
+# Project 5 : Analysis of Superstore data using Tableau
 
 ![Tableau](https://github.com/anurag3103-pa/Anurag-Portfolio/assets/83720897/c49e8a5a-ff82-4e9e-9ac1-1ed7f233e909)
 
-# [Project 5 : Analysis of Global YouTube 2023 Statistics using SQL](https://github.com/anurag3103-pa/SQL/blob/main/youtube_data.sql)
+# [Project 6 : Analysis of Global YouTube 2023 Statistics using SQL](https://github.com/anurag3103-pa/SQL/blob/main/youtube_data.sql)
 
 Objective : Disitnct categories of youtube channel
             Find top category wise subscribers and views
