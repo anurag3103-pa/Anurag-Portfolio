@@ -27,11 +27,8 @@ Matplotlib - Matplotlib is a comprehensive library for creating static, animated
 
 ![PowerBI](https://github.com/anurag3103-pa/Anurag-Portfolio/assets/83720897/c28402ab-00f6-42b1-a13f-9045641da166)
 
-# Project 5 : Analysis of Superstore data using Tableau
 
-![Tableau](https://github.com/anurag3103-pa/Anurag-Portfolio/assets/83720897/c49e8a5a-ff82-4e9e-9ac1-1ed7f233e909)
-
-# [Project 6 : Analysis of Global YouTube 2023 Statistics using SQL](https://github.com/anurag3103-pa/SQL/blob/main/youtube_data.sql)
+# [Project 5 : Analysis of Global YouTube 2023 Statistics using SQL](https://github.com/anurag3103-pa/SQL/blob/main/youtube_data.sql)
 
 # Objective : 
 
@@ -45,4 +42,4 @@ Top category wise subscribers and views
 Top channel in each country
             
 
-# [Project 7 Analyzing Motorcycle Part Sales using SQL](https://github.com/anurag3103-pa/SQL/blob/main/notebook.ipynb)
+# [Project 6 Analyzing Motorcycle Part Sales using SQL](https://github.com/anurag3103-pa/SQL/blob/main/notebook.ipynb)
