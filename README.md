@@ -36,10 +36,10 @@ Matplotlib - Matplotlib is a comprehensive library for creating static, animated
 # Objective : 
 
 
-To Find Disitnct categories of youtube channel
+Disitnct categories of youtube channel
 
 
-To Find top category wise subscribers and views
+Top category wise subscribers and views
 
 
 Top channel in each country
