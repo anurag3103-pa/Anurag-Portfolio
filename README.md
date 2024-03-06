@@ -14,5 +14,5 @@
 
 
 
-
+# Project 6 : [Analysis of Global data on sustainable energy]![cap34](https://github.com/anurag3103-pa/Anurag-Portfolio/blob/main/PowerBI.JPG)
 
