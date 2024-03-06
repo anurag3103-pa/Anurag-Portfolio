@@ -15,8 +15,7 @@
    "metadata": {},
    "source": [
     "# K Nearest Neighbors Project - Solution\n",
-    "\n",
-    "Welcome to the KNN Project! This will be a simple project very similar to the lecture, except you'll be given another data set. Go ahead and just follow the directions below.\n",
+    ,
     "## Import Libraries\n",
     "**Import pandas,seaborn, and the usual libraries.**"
    ]
@@ -752,13 +751,8 @@
     "print(classification_report(y_test,pred))"
    ]
   },
-  {
-   "cell_type": "markdown",
-   "metadata": {},
-   "source": [
-    "# Great Job!"
-   ]
-  }
+ 
+ 
  ],
  "metadata": {
   "kernelspec": {
