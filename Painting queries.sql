@@ -27,17 +27,8 @@ WHERE sale_price < (regular_price*50/100)
 SELECT work_id, size_id, sale_price FROM product_size
 WHERE sale_price = (SELECT max(sale_price) FROM product_size)
 
--- DELETE duplicate records from work, product_size, subject, image_link
-WITH dup_cte As(
-SELECT work_id, name, artist_id, style,museum_id,
-ROW_NUMBER() OVER(PARTITION BY work_id, name,
-artist_id, style,museum_id ORDER BY work_id) AS Dupcount
-FROM work)
-SELECT * FROM dup_cte
-WHERE Dupcount=1
 
-
--- Other Way deleting the duplicate
+--  Deleting the duplicate records
 
 SELECT work_id, name, artist_id, style,museum_id, COUNT(*) 
 FROM work
@@ -48,27 +39,6 @@ WHERE work_id NOT IN (
 SELECT (MIN(work_id))FROM work
 GROUP BY work_id, name, artist_id, style,museum_id )
 
--- Fast way to delet the duplicate
-
-delete from work 
-	where ctid not in (select min(ctid)
-						from work
-						group by work_id );
-
-	delete from product_size 
-	where ctid not in (select min(ctid)
-						from product_size
-						group by work_id, size_id );
-
-	delete from subject 
-	where ctid not in (select min(ctid)
-						from subject
-						group by work_id, subject );
-
-	delete from image_link 
-	where ctid not in (select min(ctid)
-						from image_link
-						group by work_id )
 
 -- Museum with invalid city information
 SELECT * FROM museum 
