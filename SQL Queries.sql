@@ -1,4 +1,4 @@
-1. Using the given Salary, Income and Deduction tables, first write an SQL query to populate the Emp_transaction table 
+1. # Using the given Salary, Income and Deduction tables, first write an SQL query to populate the Emp_transaction table 
    and then generate a salary report
 
 create extension tablefunc;
@@ -20,8 +20,6 @@ as total_deductions,
 					   others numeric)
 
 
-
-
 2.You are given a table having the marks of one student in every test. You have to output the tests in which the student has
  improved his performance. For a student to improve his performance he has to score more than the previous test. Provide 2
  solutions, one including the first test score and second excluding it.
@@ -41,6 +39,7 @@ FROM student_tests) A
 WHERE A.marks > A.prev_test_marks
 
 
+	
 3. Write a SQL query to merge products as per customer for each day.
 
 SELECT customer_id,dates, product_id::varchar FROM orders
@@ -49,8 +48,6 @@ UNION
 SELECT customer_id, dates, string_agg(product_id::varchar,',')FROM orders
 GROUP BY customer_id,dates
 ORDER BY  dates, customer_id, product_id
-
-
 
 
 
@@ -87,10 +84,8 @@ ORDER BY count(emp_id) DESC
 
 
 
-
-
-
-6. Given table contains reported covid cases in 2020. Calculate the percentage increase in covid cases each month versus cumulative cases             as of the prior month. Return the month number, and the percentage increase rounded to one decimal. Order the result by the month.
+6. Given table contains reported covid cases in 2020. Calculate the percentage increase in covid cases each month versus cumulative cases
+as of the prior month. Return the month number, and the percentage increase rounded to one decimal. Order the result by the month.
 
 
 with cte as 
@@ -109,6 +104,7 @@ select month
 from cte_final;
 
 
+
 7. Write a SQL query find out the employees who attended all the company events
 
 with cte as (
@@ -117,10 +113,6 @@ Group by emp_id)
 select employees.name, No_of_events FROM cte
 JOIN employees ON cte.emp_id = employees.id
 WHERE No_of_events = (SELECT COUNT(Distinct(No_of_events)) from cte)
-
-
-
-
 
 
 
@@ -143,7 +135,10 @@ group by to_char(order_time,'Mon-YYYY')
 order by extract(month from to_date(to_char(order_time,'Mon-YYYY'),'Mon-YYYY'))
 
 
-9. The column 'perc_viewed' in the table 'post_views' denotes the percentage of the session duration time the user spent viewing a post. Using it, calculate the total time that each post was viewed by users. Output post ID and the total viewing time in seconds, but only for posts with a total viewing time of over 5 seconds.
+	
+9. The column 'perc_viewed' in the table 'post_views' denotes the percentage of the session duration time the user spent viewing a post.
+Using it, calculate the total time that each post was viewed by users. Output post ID and the total viewing time in seconds, but only for post
+with a total viewing time of over 5 seconds.
 
 
 with cte as(
