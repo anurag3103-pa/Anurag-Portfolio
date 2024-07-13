@@ -1,5 +1,5 @@
-1. ** Using the given Salary, Income and Deduction tables, first write an SQL query to populate the Emp_transaction table 
-   and then generate a salary report **
+1. /* Using the given Salary, Income and Deduction tables, first write an SQL query to populate the Emp_transaction table 
+   and then generate a salary report */
 
 create extension tablefunc;
 SELECT employee,
