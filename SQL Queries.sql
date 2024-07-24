@@ -1,5 +1,32 @@
--- Using the given Salary, Income and Deduction tables, first write an SQL query to populate the Emp_transaction table 
-   --and then generate a salary report 
+1. Write a SQL query the produces a comma separated list of passengers who can be accomodated in each lift without exceeding
+   the lift capacity. The passengers in the list should be ordered by their weight in increasing order
+
+with cte as (
+select *, Sum(weight_kg) over(partition by id order by id, weight_kg) as sums from (
+select * from lift
+join lift_passengers on id = lift_id)
+order by id, weight_kg
+)
+
+select lift_id, string_agg(passenger_name,' ,') from cte
+where sums < capacity_kg
+group by lift_id
+
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+2. Find out the employees who attended all the company events
+
+with cte as (
+Select emp_id, COUNT(DISTINCT(event_name)) AS No_of_events FROM events
+Group by emp_id)
+select employees.name, No_of_events FROM cte
+JOIN employees ON cte.emp_id = employees.id
+WHERE No_of_events = (SELECT COUNT(Distinct(No_of_events)) from cte)
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+	
+3. Using the given Salary, Income and Deduction tables, first write an SQL query to populate the Emp_transaction table 
+   and then generate a salary report 
 
 create extension tablefunc;
 SELECT employee,
@@ -19,8 +46,9 @@ as total_deductions,
 					   health numeric, house numeric, insurance numeric,
 					   others numeric)
 
-
-2.You are given a table having the marks of one student in every test. You have to output the tests in which the student has
+-----------------------------------------------------------------------------------------------------------------------------------------------
+	
+4.You are given a table having the marks of one student in every test. You have to output the tests in which the student has
  improved his performance. For a student to improve his performance he has to score more than the previous test. Provide 2
  solutions, one including the first test score and second excluding it.
 
@@ -38,9 +66,9 @@ SELECT *, LAG(marks,1,marks) OVER(ORDER BY test_id) as prev_test_marks
 FROM student_tests) A
 WHERE A.marks > A.prev_test_marks
 
-
+------------------------------------------------------------------------------------------------------------------------------------------------
 	
-3. Write a SQL query to merge products as per customer for each day.
+5. Write a SQL query to merge products as per customer for each day.
 
 SELECT customer_id,dates, product_id::varchar FROM orders
 GROUP BY customer_id,dates,product_id
@@ -49,9 +77,9 @@ SELECT customer_id, dates, string_agg(product_id::varchar,',')FROM orders
 GROUP BY customer_id,dates
 ORDER BY  dates, customer_id, product_id
 
+----------------------------------------------------------------------------------------------------------------------------------------------
 
-
-4. Write a SQL query to split the hierarchy and show the employees corresponding to their team
+6. Write a SQL query to split the hierarchy and show the employees corresponding to their team
 
 with recursive cte as (
 select c1.employee as manager1, c2.employee, CONCAT('Team',' ',ROW_NUMBER() OVER(PARTITION BY c1.employee ORDER BY c1.employee)) as rw FROM company c1
@@ -70,8 +98,9 @@ SELECT rw AS Team, string_agg(manager1,',') as Members FROM cte2
 GROUP BY rw
 ORDER BY rw
 
+-----------------------------------------------------------------------------------------------------------------------------------------------
 
-5. Write a SQL query to find number of employees managed by each manager
+7. Write a SQL query to find number of employees managed by each manager
 
 SELECT manager_name AS MANAGER, count(emp_id) AS NO_OF_EMPLOYEES FROM(
 select e1.id as emp_id, e1.name as emp_name, e2.id as manager_id,
@@ -81,10 +110,9 @@ ORDER BY e2.name) a
 GROUP BY manager_name
 ORDER BY count(emp_id) DESC
 
+---------------------------------------------------------------------------------------------------------------------------------------------
 
-
-
-6. Given table contains reported covid cases in 2020. Calculate the percentage increase in covid cases each month versus cumulative cases
+8. Given table contains reported covid cases in 2020. Calculate the percentage increase in covid cases each month versus cumulative cases
 as of the prior month. Return the month number, and the percentage increase rounded to one decimal. Order the result by the month.
 
 
@@ -103,9 +131,9 @@ select month
 	   else '-' end as percentage_increase
 from cte_final;
 
+-------------------------------------------------------------------------------------------------------------------------------------------------
 
-
-7. Write a SQL query find out the employees who attended all the company events
+9. Write a SQL query find out the employees who attended all the company events
 
 with cte as (
 Select emp_id, COUNT(DISTINCT(event_name)) AS No_of_events FROM events
@@ -114,10 +142,9 @@ select employees.name, No_of_events FROM cte
 JOIN employees ON cte.emp_id = employees.id
 WHERE No_of_events = (SELECT COUNT(Distinct(No_of_events)) from cte)
 
+-----------------------------------------------------------------------------------------------------------------------------------------------
 
-
-
-8. Given table showcases details of pizza delivery order for the year of 2023.If an order is delayed then the whole order
+10. Given table showcases details of pizza delivery order for the year of 2023.If an order is delayed then the whole order
   is given for free. Any order that takes 30 minutes more than the order time is considered as delayed order. Identify the
   percentage of delayed order for each month and also display the total no of free pizzas given each month.
   Sort the result in order of month as shown in expected output
@@ -134,9 +161,9 @@ where actual_delivery is not null
 group by to_char(order_time,'Mon-YYYY')
 order by extract(month from to_date(to_char(order_time,'Mon-YYYY'),'Mon-YYYY'))
 
-
+-----------------------------------------------------------------------------------------------------------------------------------------------
 	
-9. The column 'perc_viewed' in the table 'post_views' denotes the percentage of the session duration time the user spent viewing a post.
+11. The column 'perc_viewed' in the table 'post_views' denotes the percentage of the session duration time the user spent viewing a post.
 Using it, calculate the total time that each post was viewed by users. Output post ID and the total viewing time in seconds, but only for post
 with a total viewing time of over 5 seconds.
 
@@ -151,8 +178,9 @@ select  post_id, sum((perc_viewed/100)*times) as total_viewtime
 group by post_id
 having sum((perc_viewed/100)*times) > 5
 
+-----------------------------------------------------------------------------------------------------------------------------------------------
 
-10. Given table has details of every IPL 2023 matches. Identify the maximum winning streak for each team. 
+12. Given table has details of every IPL 2023 matches. Identify the maximum winning streak for each team. 
     Additional test cases: 
 1) Update the dataset such that when Chennai Super Kings win match no 17, your query shows the updated streak.
 2) Update the dataset such that Royal Challengers Bangalore loose all match and your query should populate the winning streak as 0
